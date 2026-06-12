@@ -1,0 +1,61 @@
+div{
+    border: 1px solid red;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}   
+
+.container{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    height: 100%;
+}
+
+.left-side{
+    display: grid;
+    background-color:cornflowerblue;
+    color: white;
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+.right-side{ 
+     grid-column: 2/3;
+     grid-row: 1/2;
+}
+.projects-table{
+    background-color: gray;
+    grid-row: 2/3;
+}
+
+ul>li{
+   list-style-type: none;
+}
+
+.dashboard-btn{
+    background: none;    
+    border: none;         
+    padding: 0;      
+    color:white;
+    
+    font-size: inherit;
+    font-weight: bolder;
+}
+
+.main-content{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.projects-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+}
+
+.project-card{
+    border: 1px solid black
+}
