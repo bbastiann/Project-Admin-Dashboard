@@ -112,6 +112,10 @@ ul>li{
     width: 2rem;
 }
 
+.profile-avatar{
+    width: 4rem;
+}
+
 .btn-grid button {
     padding: 8px 20px;
     border: none;
@@ -120,4 +124,77 @@ ul>li{
     color: white;
     font-weight: bold;
     cursor: pointer;
+}
+
+.header {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 15px;
+}
+
+
+.header-top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+}
+
+
+.search-bar {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+
+.profile-menu {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+    align-items: center;
+}
+
+.header-bottom {
+    display: grid;
+    grid-template-columns: 1fr auto;  
+    align-items: center;
+    gap: 20px;
+}
+
+
+.profile {
+    display: grid;
+    grid-template-columns: auto 1fr;  
+    gap: 15px;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.profile div {
+    display: grid;
+    grid-template-rows: auto auto; 
+}
+
+.greeting {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 12px;
 }
