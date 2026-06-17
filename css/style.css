@@ -1,119 +1,192 @@
-.left-side,.right-side,.main-content{
-    border: 1px solid red;
-}
-
+/* ============================================
+   RESET Y CONFIGURACIÓN GLOBAL
+   ============================================ */
 body,
 html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-}   
-
-.container{
-    display: grid;
-    grid-template-columns: 30% 70%;
     height: 100%;
-    gap: 20px;  
+    width: 100%;
+    margin: 0;
 }
 
-.left-side{
+/* ============================================
+   CONTENEDOR PRINCIPAL
+   ============================================ */
+.container {
     display: grid;
-    background-color:cornflowerblue;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+/* ============================================
+   LEFT SIDE - SIDEBAR
+   ============================================ */
+.left-side {
+    display: grid;
+    background-color: cornflowerblue;
     color: white;
     grid-column: 1/2;
     grid-row: 1/3;
-    
+    grid-template-rows: auto auto 1fr;
+    padding: 50px;
 }
 
-.right-side{ 
+.left-side h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.left-side ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.dashboard-btn {
+    background: none;
+    border: none;
+    padding: 10px 0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+}
+
+.dashboard-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   RIGHT SIDE - CONTENEDOR PRINCIPAL
+   ============================================ */
+.right-side {
     display: grid;
     grid-column: 2/3;
     grid-row: 1/2;
-    
-}
-.projects-table{
-    background-color: gray;
-    grid-row: 2/3;
+    grid-template-rows: auto 1fr;  /* Header + main-content */
+    height: 100%;
+    background-color: #f0f2f5;  /* Fondo gris claro en toda la altura */
 }
 
-ul>li{
-   list-style-type: none;
-}
-
-.dashboard-btn{
-    background: none;    
-    border: none;         
-    padding: 0;      
-    color:white;
-    
-    font-size: large;
-    font-weight: bolder;
-}
-
-.main-content{
+/* ============================================
+   HEADER - CON SOMBRA Y FONDO BLANCO
+   ============================================ */
+.header {
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-rows: auto auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);  /* Sombra suave que separa del contenido */
+}
+
+.header-top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+}
+
+.search-bar {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.search-bar span {
+    font-size: 18px;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    padding: 8px 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+.profile-menu {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+    align-items: center;
+}
+
+.notification-icon {
+    position: relative;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.notification-icon .badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background: red;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.header-bottom {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
     gap: 20px;
 }
 
-.projects-grid{
+.profile {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: auto;
-    gap: 20px;
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+    align-items: center;
 }
 
-
-.project-card{
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 0.5rem;
-    border-left: 5px solid orange;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);;
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.titulo{
-    font-size: larger;
-    font-weight: bolder;
-}
-
-
-.trending-grid{
+.profile div {
     display: grid;
-    border: 1px solid black;
-    gap: 5px;
-    border-radius: 0.5rem;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);;
+    grid-template-rows: auto auto;
 }
 
-.trending-card{
-    padding: 10px;
+.greeting {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
 }
 
-
-.announcements-grid{
+.btn-grid {
     display: grid;
-    border: 1px solid black;
-    gap: 5px;
-    border-radius: 0.5rem;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);;    
-}
-
-.announce-card{
-    padding: 10px;
-}
-
-.aside-content{
-    display: grid;
-    grid-template-rows: auto auto
-}
-
-.avatar{
-    width: 2rem;
-}
-
-.profile-avatar{
-    width: 4rem;
+    grid-template-columns: repeat(3, auto);
+    gap: 12px;
 }
 
 .btn-grid button {
@@ -124,77 +197,140 @@ ul>li{
     color: white;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.header {
-    display: grid;
-    grid-template-rows: auto auto;
-    gap: 15px;
+.btn-grid button:hover {
+    background-color: #2563eb;
 }
 
-
-.header-top {
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.main-content {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 20px;
-    align-items: center;
-}
-
-
-.search-bar {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-}
-
-
-.profile-menu {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 15px;
-    align-items: center;
-}
-
-.header-bottom {
-    display: grid;
-    grid-template-columns: 1fr auto;  
-    align-items: center;
+    grid-template-columns: 70% 30%;
     gap: 20px;
 }
 
+.main-content h1,
+.aside-content h1 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
 
-.profile {
+/* ============================================
+   PROYECTOS - 3 FILAS IGUALES
+   ============================================ */
+.projects-grid {
     display: grid;
-    grid-template-columns: auto 1fr;  
-    gap: 15px;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);  /* ← 3 filas que ocupan toda la altura */
+    gap: 20px;
 }
 
-.profile-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.profile div {
+.project-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 0.5rem;
+    border-left: 5px solid orange;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-rows: auto auto; 
+    grid-template-rows: auto 1fr;
 }
 
-.greeting {
+.project-card .titulo {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.project-card .texto {
     font-size: 14px;
-    color: #666;
+    color: #555;
     margin: 0;
 }
 
-.username {
-    font-weight: bold;
-    font-size: 16px;
+/* ============================================
+   ASIDE CONTENT (Announcements + Trending)
+   ============================================ */
+.aside-content {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 20px;
 }
 
-
-.btn-grid {
+.announcements-container {
     display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 12px;
+}
+
+.trending-container {
+    display: grid;
+}
+
+/* ============================================
+   ANNOUNCEMENTS
+   ============================================ */
+.announcements-grid {
+    background-color: white;
+    display: grid;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.announce-card {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.announce-card:last-child {
+    border-bottom: none;
+}
+
+.announce-card .titulo {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0 0 3px 0;
+}
+
+.announce-card .texto {
+    font-size: 13px;
+    color: #555;
+    margin: 0;
+}
+
+/* ============================================
+   TRENDING
+   ============================================ */
+.trending-grid {
+    background-color: white;
+    display: grid;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.trending-card {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.trending-card:last-child {
+    border-bottom: none;
+}
+
+.trending-card .user {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0 0 3px 0;
+}
+
+.trending-card .texto {
+    font-size: 13px;
+    color: #555;
+    margin: 0;
 }
