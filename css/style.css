@@ -14,7 +14,6 @@ html {
 .container {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 20px;
     min-height: 100vh;
 }
 
@@ -66,7 +65,7 @@ html {
     grid-column: 2/3;
     grid-row: 1/2;
     grid-template-rows: auto 1fr;  /* Header + main-content */
-    height: 100%;
+    min-height: 100vh;
     background-color: #f0f2f5;  /* Fondo gris claro en toda la altura */
 }
 
