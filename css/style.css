@@ -1,6 +1,4 @@
-/* ============================================
-   RESET Y CONFIGURACIÓN GLOBAL
-   ============================================ */
+/* Reset y configuración global */
 body,
 html {
     height: 100%;
@@ -8,18 +6,14 @@ html {
     margin: 0;
 }
 
-/* ============================================
-   CONTENEDOR PRINCIPAL
-   ============================================ */
+/* Contenedor principal */
 .container {
     display: grid;
     grid-template-columns: auto 1fr;
     min-height: 100vh;
 }
 
-/* ============================================
-   LEFT SIDE - SIDEBAR
-   ============================================ */
+/* Left side - Sidebar */
 .left-side {
     display: grid;
     background-color: cornflowerblue;
@@ -61,9 +55,7 @@ html {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* ============================================
-   RIGHT SIDE - CONTENEDOR PRINCIPAL
-   ============================================ */
+/* Right side - Contenedor principal */
 .right-side {
     display: grid;
     grid-column: 2/3;
@@ -71,12 +63,10 @@ html {
     grid-template-rows: auto 1fr;
     min-height: 100vh;
     background-color: #f0f2f5;
-    min-width: 0; /* evita que el contenido interno empuje el ancho de esta columna del container */
+    min-width: 0;
 }
 
-/* ============================================
-   HEADER - CON SOMBRA Y FONDO BLANCO
-   ============================================ */
+/* Header - Con sombra y fondo blanco */
 .header {
     display: grid;
     grid-template-rows: auto auto;
@@ -208,9 +198,7 @@ html {
     background-color: #2563eb;
 }
 
-/* ============================================
-   MAIN CONTENT
-   ============================================ */
+/* Main content */
 .main-content {
     display: grid;
     grid-template-columns: 70% 30%;
@@ -223,9 +211,7 @@ html {
     margin-bottom: 15px;
 }
 
-/* ============================================
-   PROYECTOS - 3 FILAS IGUALES
-   ============================================ */
+/* Proyectos - 3 filas iguales */
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -241,7 +227,7 @@ html {
     border-left: 5px solid orange;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr auto;
 }
 
 .project-card .titulo {
@@ -256,27 +242,23 @@ html {
     margin: 0;
 }
 
-/* ============================================
-   ASIDE CONTENT (Announcements + Trending)
-   ============================================ */
+/* Aside content (Announcements + Trending) */
 .aside-content {
     display: grid;
     grid-template-rows: auto auto;
     gap: 20px;
-    min-width: 0;        /* ← EVITA QUE SE EXPANDA POR SU CONTENIDO */
-    overflow: hidden;    /* ← POR SI ALGÚN HIJO SE DESBORDA */
+    min-width: 0;
+    overflow: hidden;
 }
 
 .announcements-container,
 .trending-container {
     display: grid;
     grid-template-columns: 1fr;
-    min-width: 0;        /* ← IMPIDE QUE EL CONTENIDO EMPUJE EL ANCHO */
+    min-width: 0;
 }
 
-/* ============================================
-   ANNOUNCEMENTS
-   ============================================ */
+/* Announcements */
 .announcements-grid {
     background-color: white;
     display: grid;
@@ -284,7 +266,7 @@ html {
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    max-width: 100%;     /* ← NO SE ESTIRA MÁS ALLÁ DEL PADRE */
+    max-width: 100%;
 }
 
 .announce-card {
@@ -306,12 +288,10 @@ html {
     font-size: 13px;
     color: #555;
     margin: 0;
-    word-wrap: break-word;   /* ← ROMPE PALABRAS LARGAS PARA QUE NO SE EXPANDAN */
+    word-wrap: break-word;
 }
 
-/* ============================================
-   TRENDING
-   ============================================ */
+/* Trending */
 .trending-grid {
     background-color: white;
     display: grid;
@@ -319,7 +299,7 @@ html {
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    max-width: 100%;     /* ← NO SE ESTIRA MÁS ALLÁ DEL PADRE */
+    max-width: 100%;
 }
 
 .trending-card {
@@ -341,14 +321,10 @@ html {
     font-size: 13px;
     color: #555;
     margin: 0;
-    word-wrap: break-word;   /* ← ROMPE PALABRAS LARGAS PARA QUE NO SE EXPANDAN */
+    word-wrap: break-word;
 }
 
-
-.project-card {
-    grid-template-rows: auto 1fr auto;  /* título, texto, botones */
-}
-
+/* Botones de acción en tarjetas */
 .card-actions {
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -363,4 +339,11 @@ html {
     font-size: 18px;
     cursor: pointer;
     padding: 0;
+}
+
+/* Wrapper de proyectos para estirar el grid */
+.projects-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%;
 }
